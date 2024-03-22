@@ -1,0 +1,29 @@
+<mat-toolbar class="mat-elevation-z8">
+<button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+>
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+</button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+<mat-sidenav #sidenav="matSidenav" sidenav.closed [autoFocus]="false">
+    <button mat-button class="menu-button" routerLink="/data1">
+        <mat-icon class="icon-size">task</mat-icon>
+        <span>Data1</span>
+    </button>
+    <hr />
+    <button mat-button class="menu-button" routerLink="/data2">
+        <mat-icon class="icon-size">task</mat-icon>
+        <span>Data2</span>
+    </button>
+</mat-sidenav>
+<mat-sidenav-content>
+    <div class="content mat-elevation-z4">
+        <ng-content></ng-content>
+    </div>
+</mat-sidenav-content>
+</mat-sidenav-container>

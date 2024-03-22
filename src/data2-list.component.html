@@ -1,0 +1,19 @@
+<div class="container">
+<h1>Component 2 with Async approach</h1>
+@if (test$ | async; as data) {
+  @for (item of data; track $index) {
+    <p>
+      {{item.username}} / {{item.name}} / {{item.email}}
+    </p>
+  } 
+}
+</div>
+
+<div class="container2">
+  <h1>Component 2 with subscribe approach</h1>
+  @for (item of data; track $index) {
+    <p>
+      {{item.username}} / {{item.name}} / {{item.email}}
+    </p>
+  } 
+</div>
